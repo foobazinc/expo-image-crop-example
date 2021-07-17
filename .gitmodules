@@ -1,0 +1,3 @@
+[submodule "react-native-simple-image-cropper"]
+	path = modules/react-native-simple-image-cropper
+	url = https://github.com/barrsan/react-native-simple-image-cropper

@@ -1,11 +1,13 @@
-import { StyleSheet, View } from 'react-native'
+import { StatusBar, StyleSheet, View } from 'react-native'
 import { PhotoSelectionButton } from '../components/PhotoSelectionButton'
 import React from 'react'
+import { AppNavigator } from '../AppNavigator'
 
 export function IndexContainer() {
 	return (
 		<View style={styles.container}>
-			<PhotoSelectionButton />
+			<StatusBar />
+			<AppNavigator />
 		</View>
 	)
 }
@@ -13,9 +15,6 @@ export function IndexContainer() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
 	},
 });
 
