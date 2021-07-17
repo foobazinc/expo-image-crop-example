@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { Actions } from 'react-native-router-flux'
 import ImageCropper from '../../modules/react-native-simple-image-cropper/src'
 import { ICropperParams } from 'react-native-simple-image-cropper'
+import { RNHoleView } from 'react-native-hole-view'
 
 type Props = {
 	imageUri: string
 }
 
 const width = Dimensions.get('window').width
+const height = Dimensions.get('window').height
 
 export function Preview({ imageUri }: Props) {
 	const [cropperParams, setCropperParams] = useState<ICropperParams>()
@@ -47,13 +49,19 @@ export function Preview({ imageUri }: Props) {
 
 	return (
 		<View style={styles.container}>
-			<ImageCropper
-				setCropperParams={setCropperParams}
-				imageUri={imageUri}
-				cropAreaHeight={150}
-				cropAreaWidth={300}
-				areaOverlay={<View style={styles.overlay} />}
-			/>
+			<RNHoleView
+				style={{ position: 'absolute', top: 0, width: '100%', zIndex: 100, height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+				holes={[{ x: width / 2 - 150, y: height / 2 - 225, width: 300, height: 150 }]}>
+			</RNHoleView>
+			<View style={styles.imageCropperContainer}>
+				<ImageCropper
+					setCropperParams={setCropperParams}
+					imageUri={imageUri}
+					cropAreaHeight={150}
+					cropAreaWidth={300}
+					areaColor='white'
+				/>
+			</View>
 			<View style={styles.textContainer}>
 				<Text style={styles.text}>スワイプで位置を調整できます</Text>
 				<Text style={styles.text}>ピンチイン・アウトでサイズを調整できます</Text>
@@ -65,8 +73,11 @@ export function Preview({ imageUri }: Props) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
+	},
+	imageCropperContainer: {
+		position: 'absolute',
+		top: height / 2 - 150,
+		left: width / 2,
 	},
 	textContainer: {
 		flex: 1,

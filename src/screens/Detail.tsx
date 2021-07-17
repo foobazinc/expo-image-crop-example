@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { PhotoSelectionButton } from '../components/PhotoSelectionButton'
 import { Actions } from 'react-native-router-flux'
 
