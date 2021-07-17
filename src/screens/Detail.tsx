@@ -10,7 +10,7 @@ type Props = {
 export function Detail({ imageUri }: Props) {
 	return (
 		<View style={styles.container}>
-			<Image style={styles.image} source={{ uri: imageUri || 'https://via.placeholder.com/300x150' }} />
+			{imageUri && <Image style={styles.image} source={{ uri: imageUri }} />}
 			<PhotoSelectionButton afterLaunch={({ assets }) => {
 				const imageUri = assets?.[0]?.uri || ''
 
