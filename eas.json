@@ -6,7 +6,7 @@
       },
       "development": {
         "gradleCommand": ":app:assembleDebug",
-        "distribution": "simulator"
+        "distribution": "internal"
       }
     },
     "ios": {
@@ -15,7 +15,7 @@
       },
       "development": {
         "schemeBuildConfiguration": "Debug",
-        "distribution": "simulator"
+        "distribution": "internal"
       }
     }
   }
