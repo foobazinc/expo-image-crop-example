@@ -5552,6 +5552,11 @@ react-native-hole-view@^2.0.2:
   resolved "https://registry.yarnpkg.com/react-native-hole-view/-/react-native-hole-view-2.0.2.tgz#94f3ce57d0d20b2fe83aed06f28f1ca6215ebe09"
   integrity sha512-izbteaQ8eyEKXCsJ8Y6f8qwYOh+t5mpCiL/h7FZ5y03dddzNvJyFOkuMS6UklQV7QiSMeUQ1rMKKYgo05RBogw==
 
+react-native-image-pan-zoom@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/react-native-image-pan-zoom/-/react-native-image-pan-zoom-2.1.12.tgz#eb98bf56fb5610379bdbfdb63219cc1baca98fd2"
+  integrity sha512-BF66XeP6dzuANsPmmFsJshM2Jyh/Mo1t8FsGc1L9Q9/sVP8MJULDabB1hms+eAoqgtyhMr5BuXV3E1hJ5U5H6Q==
+
 react-native-image-picker@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-4.0.5.tgz#e4858357e5dc3e616bca953ba83851bf7f868f84"
@@ -5614,11 +5619,6 @@ react-native-screens@^3.4.0:
   integrity sha512-cg+q9MRnVdeOcJyvJtqffoXLur/C2wHA/7IO2+FAipzTlgHbbM1mTuSM7qG+SeiQjoIs4mHOEf7A0ziPKW04sA==
   dependencies:
     warn-once "^0.1.0"
-
-react-native-simple-image-cropper@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-simple-image-cropper/-/react-native-simple-image-cropper-3.2.1.tgz#8ab4439ed7627e7e4ce4813d167b30de0ef329af"
-  integrity sha512-H3y3RAJA2gzj4PeiL3X5p0Sv7CLzUXod9wKG561aOwjmZ4VgZn5PTqlwRKaQTvf1Fu8GiiJgTzvyk1Sya9UQww==
 
 react-native-size-matters@^0.3.1:
   version "0.3.1"

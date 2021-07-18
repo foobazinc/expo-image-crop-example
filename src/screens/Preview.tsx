@@ -2,18 +2,20 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Actions } from 'react-native-router-flux'
 import ImageCropper from '../../modules/react-native-simple-image-cropper/src'
-import { ICropperParams } from 'react-native-simple-image-cropper'
 import { RNHoleView } from 'react-native-hole-view'
 
 type Props = {
 	imageUri: string
 }
 
+// 検証用のため各種値はハードコードしてあります
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
+const croppedTopPosition = height / 2 - 225
+const croppedLeftPosition = width / 2 - 150
 
 export function Preview({ imageUri }: Props) {
-	const [cropperParams, setCropperParams] = useState<ICropperParams>()
+	const [cropperParams, setCropperParams] = useState()
 
 	const cropImage = async () => {
 		const cropSize = {
@@ -51,7 +53,7 @@ export function Preview({ imageUri }: Props) {
 		<View style={styles.container}>
 			<RNHoleView
 				style={{ position: 'absolute', top: 0, width: '100%', zIndex: 100, height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
-				holes={[{ x: width / 2 - 150, y: height / 2 - 225, width: 300, height: 150 }]}>
+				holes={[{ x: croppedLeftPosition, y: croppedTopPosition, width: 300, height: 150 }]}>
 			</RNHoleView>
 			<View style={styles.imageCropperContainer}>
 				<ImageCropper
@@ -73,11 +75,12 @@ export function Preview({ imageUri }: Props) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		position: 'relative',
 	},
 	imageCropperContainer: {
 		position: 'absolute',
-		top: height / 2 - 150,
-		left: width / 2,
+		top: croppedTopPosition,
+		left: croppedLeftPosition,
 	},
 	textContainer: {
 		flex: 1,
