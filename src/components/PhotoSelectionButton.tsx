@@ -31,16 +31,18 @@ export function PhotoSelectionButton({ afterLaunch }: Props) {
 									},
 									afterLaunch
 								)
-								break;
+								break
 							}
-							default: { // 写真を撮る
+							case 2: { // 写真を撮る
 								launchCamera(
 									{
 										mediaType: 'photo',
 									},
 									afterLaunch
 								)
+								break
 							}
+							default: {}
 						}
 					})
 			}}
