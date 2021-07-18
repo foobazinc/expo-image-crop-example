@@ -11,3 +11,4 @@
 5. スワイプで切り抜き位置を調整
 6. デザインにある程度沿った画面を作成
 
+![ios](https://user-images.githubusercontent.com/14968729/126069598-f03d5a97-d76b-4a99-a30b-dcb1675cece7.gif)
