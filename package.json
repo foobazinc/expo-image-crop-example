@@ -1,5 +1,6 @@
 {
   "scripts": {
+		"prepare": "git submodule update --init",
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
